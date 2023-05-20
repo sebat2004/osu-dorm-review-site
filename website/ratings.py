@@ -3,13 +3,9 @@ import requests as requests
 
 ratings = Blueprint("ratings", __name__)
 
-hallIDs = []
-for id in hallIDs:
-    url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" + id + "&fields=reviews%2Crating&key=AIzaSyBYII-GqPLWO7JRqsOpCd6Z7JwvFQq9g54"
-    payload= {}
-    headers = {}
+url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJl-61hrlAwFQRSsuaxoMTm7I&fields=reviews%2Crating&key=***"
 
-    response = requests.request("GET", url, headers=headers, data=payload)
+    response = requests.request("GET", url, headers={}, data={})
 
     reviews = response.json().get('result').get('reviews')
     rating = response.json().get('result').get('rating')
