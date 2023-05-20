@@ -2,7 +2,7 @@ from flask import Flask
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'nhasdp9ihb12-938gs018b081cgvbdwiu8vboa'
+    app.config['SECRET_KEY'] = '***'
 
     from .views import views
     from .ratings import ratings
