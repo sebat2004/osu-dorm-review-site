@@ -1,6 +1,16 @@
-{%  extends 'layout.html' %}
+{% extends 'layout.html' %}
 {% block content %}
-
-    
+<h1>List of Halls</h1>
+<div class="hall-container">
+    {% for hall, hallInfo in hallIDs.items() %}
+        <div class="hall">
+            <img src="static/{{ hallInfo[1] }}"></img>
+            <div class="hall-info">
+                <h1>{{ hall }}</h1>
+                <h1> {{ hallInfo[2] }} / 5 </h1>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}

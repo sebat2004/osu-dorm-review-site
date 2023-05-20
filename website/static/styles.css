@@ -117,3 +117,40 @@ p {
 .background-text p {
     font-size: 20px;
 }
+
+.hall, .hall h1 {
+    font-family: "Montserrat", sans-serif;
+    color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}
+
+.hall:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.hall-container {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    gap: 20px;
+    background: transparent;
+}
+
+.hall-container img {
+    opacity: 0.7;
+    object-fit: cover;
+}
+
+.hall-info {
+    padding:20px;
+    text-align:center;
+    position: absolute;
+    background: transparent;
+}
