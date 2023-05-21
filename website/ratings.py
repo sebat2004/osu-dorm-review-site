@@ -24,7 +24,7 @@ allReviews = []
 
 # Takes each hall and feeds Google Places API the ID of the hall to get the reviews and rating of the hall
 for hall, hallInfo in hallIDs.items():
-    url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={hallInfo[0]}&fields=reviews%2Crating&key=CONFIDENTIAL"
+    url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={hallInfo[0]}&fields=reviews%2Crating&key=AIzaSyAw2pYSv54aDUDxRNpVChe9WSt1H6jOkpo"
     response = requests.request("GET", url, headers={}, data={})
     reviews = response.json().get('result').get('reviews')
     for review in reviews:
