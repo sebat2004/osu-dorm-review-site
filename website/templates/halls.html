@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
     <title>OSU Dorm Reviews</title>
 </head>
 <body>
@@ -20,7 +20,17 @@
         </form>
     </header>
     <div class="content">
-        {% block content %}{% endblock %}
+        <img class="dorm-img" src=../static/{{ hallIDs[hall][1] }}>
+        <h1>{{ hall }}</h1>
+        <div class="reviews">
+            {% for hallReview in allReviews %}
+                {% if hallReview[2] == hall %}
+                    <div class="review">
+                        <h1>{{ hallReview[1] }}</h1>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </body>
-</html>
+
