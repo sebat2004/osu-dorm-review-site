@@ -19,14 +19,47 @@
             <input class="search-submit" type="submit" value="Search">
         </form>
     </header>
-    <div class="content">
-        <img class="dorm-img" src=../static/{{ hallIDs[hall][1] }}>
-        <h1>{{ hall }}</h1>
-        <div class="reviews">
+    <div class="content-2">
+        <div class="image-container">
+            <img src="../static/{{ hallIDs[hall][1] }}" alt="Hall Image">
+            <div class="hall-info">
+                <h1 class="text-overlay">{{ hall }} Hall Reviews</h1>
+            </div>
+        </div>
+        <div class="backbar">
+            <a href="/dorms">
+                <img src="../static/back.png" alt="Back">
+                <h2>Back to Dorms</h2>
+            </a>
+        </div>
+        <div class="review-container">
             {% for hallReview in allReviews %}
                 {% if hallReview[2] == hall %}
                     <div class="review">
-                        <h1>{{ hallReview[1] }}</h1>
+                        <div class="stars">
+                            {% if hallReview[0] == 1 %}
+                                <img src="../static/star.png" alt="1 Star">
+                            {% elif hallReview[0] == 2 %}
+                                <img src="../static/star.png" alt="2 Star">
+                                <img src="../static/star.png" alt="2 Star">
+                            {% elif hallReview[0] == 3 %}
+                                <img src="../static/star.png" alt="3 Star">
+                                <img src="../static/star.png" alt="3 Star">
+                                <img src="../static/star.png" alt="3 Star">
+                            {% elif hallReview[0] == 4 %}
+                                <img src="../static/star.png" alt="4 Star">
+                                <img src="../static/star.png" alt="4 Star">
+                                <img src="../static/star.png" alt="4 Star">
+                                <img src="../static/star.png" alt="4 Star">
+                            {% elif hallReview[0] == 5 %}
+                                <img src="../static/star.png" alt="5 Star">
+                                <img src="../static/star.png" alt="5 Star">
+                                <img src="../static/star.png" alt="5 Star">
+                                <img src="../static/star.png" alt="5 Star">
+                                <img src="../static/star.png" alt="5 Star">
+                            {% endif %}
+                        </div>
+                        <h2>{{ hallReview[1] }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}

@@ -3,7 +3,10 @@
 
     {% if search %}
     {% if not searchResults %}
-    <h1>No results found for "{{ search }}"</h1>
+    <div class="no-results">
+        <h1>No results found for "{{ search }}"</h1>
+        <button><a href="/dorms">View Dorms List</a></button>   
+    </div>
     {% else %}
     <h1>Displaying related search results...</h1>
     {% endif %}
