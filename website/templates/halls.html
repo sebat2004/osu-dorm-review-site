@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <script>
+        function typeWriter() {
+            const outputTag = document.getElementById("output");
+            let text = {{ gptOutput[hall]|tojson }};
+            let i = 0;
+            let speed = 25; 
+            const intervalId = setInterval (function() {
+                outputTag.innerHTML += text[i];
+                i++;
+                if (i === text.length) {
+                    clearInterval(intervalId);
+                }
+            }, speed);
+        }
+        
+        function displaySummary() {
+            let button = document.getElementById('gpt-button');
+            let gptOutput = document.getElementById('gpt-output');
+            button.style.display = 'none';
+            gptOutput.style.display = 'flex';
+            typeWriter();
+        }
+    </script>
     <title>OSU Dorm Reviews</title>
 </head>
 <body>
@@ -27,10 +51,16 @@
             </div>
         </div>
         <div class="backbar">
-            <a href="/dorms">
-                <img src="../static/back.png" alt="Back">
-                <h2>Back to Dorms</h2>
-            </a>
+            <div class="back-arrow">
+                <a href="/dorms">
+                    <img src="../static/back.png" alt="Back">
+                    <h2>Back to Dorms</h2>
+                </a>
+            </div>
+        </div> 
+        <button id="gpt-button" onClick="displaySummary()">Read ChatGPT's Summary</button>
+        <div id="gpt-output">
+            <h2 id="output"></h2>
         </div>
         <div class="review-container">
             {% for hallReview in allReviews %}

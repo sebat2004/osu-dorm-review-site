@@ -24,6 +24,7 @@
             </a>
         {% endfor %}
     {% else %}
+    <h1>Displaying all dorms...</h1>
     <div class="hall-container">
         {% for hall, hallInfo in hallIDs.items() %}
             <a href="/dorms/{{ hall }}">
