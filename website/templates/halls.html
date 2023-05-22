@@ -11,7 +11,7 @@
             const outputTag = document.getElementById("output");
             let text = {{ gptOutput[hall]|tojson }};
             let i = 0;
-            let speed = 25; 
+            let speed = 30; 
             const intervalId = setInterval (function() {
                 outputTag.innerHTML += text[i];
                 i++;
