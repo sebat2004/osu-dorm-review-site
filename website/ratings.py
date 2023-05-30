@@ -58,7 +58,7 @@ def dorms():
         search = request.form["search"]
         searchResults = process.extract(search, hallIDs.keys()) # [(hall, score), (hall, score), ...]
         searchResults = [result[0] for result in searchResults if result[1] > 60] # only saves scores above 60
-        return render_template('dorms.html', allReviews=allReviews, hallIDs=hallIDs, search=search, searchResults=searchResults)
+        return render_template('dorms.html', allReviews=allReviews, hallIDs=hallIDs, search=search, searchResults=searchResults, hall=None)
     return render_template('dorms.html', allReviews=allReviews, hallIDs=hallIDs, hall=None)
 
 # Route for the individual hall pages, passes in the hall name and the information collected from the Google API and OpenAI API
