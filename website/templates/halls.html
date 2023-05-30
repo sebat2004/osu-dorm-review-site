@@ -58,11 +58,20 @@
                 </a>
             </div>
         </div> 
-        <button id="gpt-button" onClick="displaySummary()">Read ChatGPT's Summary</button>
-        <div id="gpt-output">
-            <h2 id="output"></h2>
-        </div>
         <div class="review-container">
+            <div class="button-container">
+                <button id="gpt-button" onClick="displaySummary()">Read AI's Summary</button>
+                <div id="gpt-output">
+                    <h1>AI Review Summary</h1>
+                    <h2 id="output"></h2>
+                </div>
+                <div id="google-reviews-button">
+                    <a href={{hallIDs[hall][2]}}>
+                        <h1>View All Reviews</h1>
+                        <img src="../static/Google.png">
+                    </a>
+                </div> 
+            </div>
             {% for hallReview in allReviews %}
                 {% if hallReview[2] == hall %}
                     <div class="review">

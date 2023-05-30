@@ -1,0 +1,6 @@
+my_env
+website/__pycache__
+website/.DS_Store
+__pycache__
+.DS_Store
+venv
