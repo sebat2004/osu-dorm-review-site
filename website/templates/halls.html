@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-40SMMBHQ20"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-40SMMBHQ20');
+    </script>
     <script>
         function typeWriter() {
             const outputTag = document.getElementById("output");
-            let text = {{ gptOutput[hall]|tojson }};
+            let text = {{ 'gptOutput[hall]|tojson' }};
             let i = 0;
             let speed = 30; 
             const intervalId = setInterval (function() {

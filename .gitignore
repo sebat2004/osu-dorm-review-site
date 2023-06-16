@@ -1,6 +1,7 @@
 my_env
 website/__pycache__
 website/.DS_Store
+main.py
 __pycache__
 .DS_Store
 venv
