@@ -16,6 +16,10 @@
     background-color: #edeef1;
 }
 
+a {
+    text-decoration: none;
+}
+
 *,
 *::before,
 *::after {
@@ -41,14 +45,6 @@ h1 {
     color: #000000;
     text-align: center;
     margin: 20px 0px;
-}
-
-li, li a {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
 }
 
 header {
@@ -98,9 +94,6 @@ header {
 }
 
 button {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     padding: 9px 25px;
     background-color: #f17b36;
     border: none;
@@ -151,9 +144,6 @@ p {
 }
 
 .background-text h1, .background-text p {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     margin: 10px 0px;
     color: white;
     background: transparent;
@@ -169,9 +159,7 @@ p {
 
 .hall, .hall h1 {
     padding: 20px 0px;
-    animation: fadeInAnimation ease 0.6s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation: fadeInAnimation ease 0.3s;
     font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
@@ -181,9 +169,7 @@ p {
 }
 
 .hall h1 {
-    animation: fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation: fadeInAnimation ease 0.3s;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
@@ -295,12 +281,6 @@ header form input {
     width: 100%;
 }
 
-.text-overlay {
-    color: white;
-    text-align: center;
-    font-size: 50px;
-}
-
 .review-container {
     display: flex;
     flex-direction: column;
@@ -359,7 +339,6 @@ header form input {
     height: 50px;
     margin: 0px 5px;
     background-color: rgb(243, 212, 172);
-    border-radius: 20px;
 }
 
 .backbar {
@@ -380,8 +359,9 @@ header form input {
 }
 
 .back-arrow a h2:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: #ff5e00;
+    z-index: 1;
     transition: 0.1s ease-in-out;
 }
 
@@ -394,8 +374,6 @@ header form input {
     font-family: "Montserrat", sans-serif;
     border-radius: 10px;
     animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
