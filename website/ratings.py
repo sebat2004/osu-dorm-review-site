@@ -1,9 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from dotenv import load_dotenv
 import requests as requests
 from thefuzz import process
 from collections import defaultdict
 import openai
 import os
+
+load_dotenv()
 
 ratings = Blueprint("ratings", __name__)
 
