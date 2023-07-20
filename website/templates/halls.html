@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="../static/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,8 @@
     <script>
         function typeWriter() {
             const outputTag = document.getElementById("output");
-            let text = {{ 'gptOutput[hall]|tojson' }};
+            let text = {{ gptOutput[hall]|tojson }};
+            console.log(text)
             let i = 0;
             let speed = 30; 
             const intervalId = setInterval (function() {
@@ -69,7 +70,7 @@
         </div> 
         <div class="review-container">
             <div class="button-container">
-                <button id="gpt-button" onClick="displaySummary()">Read AI's Summary</button>
+                <button id="gpt-button" onClick="displaySummary()">AI's Summary</button>
                 <div id="gpt-output">
                     <h1>AI Review Summary</h1>
                     <h2 id="output"></h2>

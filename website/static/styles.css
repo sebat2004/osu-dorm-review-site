@@ -379,11 +379,10 @@ header form input {
     align-items: center;
     justify-content: center;   
     background-color: rgb(64, 214, 179);
-    padding: 20px 3%;
     margin-left: 20px;
     gap: 10px;
-    height: 100px;
-    width: 40%;
+    height: 85px;
+    width: 35%;
     font-size: 22px;
 }
 
@@ -424,13 +423,13 @@ header form input {
     transition: all 0.1s ease 0s;
     text-align: center;
     padding: 20px 3%;
-    margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 85px;
     margin-left: auto;
     border-radius: 10px;
+    width: 100%;
 }
 
 #google-reviews-button a {
@@ -440,7 +439,7 @@ header form input {
 }
 
 #google-reviews-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: ease-in-out 0.1s;
 }
 
