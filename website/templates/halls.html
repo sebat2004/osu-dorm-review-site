@@ -18,12 +18,15 @@
     <script>
         window.addEventListener("DOMContentLoaded", (event) => {
             let gptOutput = document.getElementById('gpt-output');
-            gptOutput.addEventListener('click', () => {
+
+            const writeOutput = () => {
                 console.log("clicked")
+                gptOutput.removeEventListener('click', writeOutput)
                 const outputTag = document.getElementById("gpt-output");
                 outputTag.innerHTML = "";
                 outputTag.style.fontFamily = "Roboto";
                 outputTag.style.fontSize = "20px";
+                outputTag.style.fontWeight = "400";
                 let text = `{{gptOutput[hall]|tojson}}`;
                 let i = 1;
                 let speed = 25; 
@@ -34,8 +37,11 @@
                         clearInterval(intervalId);
                     }
                 }, speed);
-            });
-        });
+            };
+            
+            gptOutput.addEventListener('click', writeOutput);
+
+        })
     </script>
     <title>OSU Dorm Reviews</title>
 </head>
