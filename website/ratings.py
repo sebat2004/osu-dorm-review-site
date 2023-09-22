@@ -41,17 +41,19 @@ for hall, hallInfo in hallIDs.items():
 gptOutput = defaultdict(list)
 for rating, text, hall in allReviews:
     gptOutput[hall].append(text)
+
 for hall, reviews in gptOutput.items():
-    API_KEY = os.getenv('OPEN_AI_API_KEY')
-    openai.api_key = API_KEY
-    prompt = f"After given reviews of { hall } Hall at Oregon State University, summarize the reviews given in one paragraph. {reviews}"
-    response = openai.Completion.create(
-        engine = "text-curie-001",
-        prompt = prompt,
-        temperature = 0.2,
-        max_tokens = 100)
-    output = response.get('choices')[0]['text']
-    gptOutput[hall] = output
+    openai.api_key = os.getenv('OPEN_AI_API_KEY')
+    prompt = f"After given reviews of { hall } Hall at Oregon State University, summarize the reviews given in a maximum of 250 characters. Here are the reviews: {reviews} Again, do not exceed 250 characters in your summary."
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages = [{'role': 'user', 'content': prompt}],
+    )
+
+    try:
+        gptOutput[hall] = response.choices[0]['message']['content']
+    except:
+        gptOutput[hall] = "No summary available"
 
 # Sets a route for the dorms page and passes in the necessary information collected from the API to the html file
 @ratings.route('/dorms', methods=["GET", "POST"])

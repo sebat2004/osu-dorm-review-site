@@ -7,3 +7,5 @@ __pycache__
 venv
 .env
 website/__init__.pyc
+website/__pycache__/
+flask
