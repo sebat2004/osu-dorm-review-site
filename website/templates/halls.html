@@ -16,28 +16,26 @@
         gtag('config', 'G-40SMMBHQ20');
     </script>
     <script>
-        function typeWriter() {
-            const outputTag = document.getElementById("output");
-            let text = {{ gptOutput[hall]|tojson }};
-            console.log(text)
-            let i = 0;
-            let speed = 30; 
-            const intervalId = setInterval (function() {
-                outputTag.innerHTML += text[i];
-                i++;
-                if (i === text.length) {
-                    clearInterval(intervalId);
-                }
-            }, speed);
-        }
-        
-        function displaySummary() {
-            let button = document.getElementById('gpt-button');
+        window.addEventListener("DOMContentLoaded", (event) => {
             let gptOutput = document.getElementById('gpt-output');
-            button.style.display = 'none';
-            gptOutput.style.display = 'flex';
-            typeWriter();
-        }
+            gptOutput.addEventListener('click', () => {
+                console.log("clicked")
+                const outputTag = document.getElementById("gpt-output");
+                outputTag.innerHTML = "";
+                outputTag.style.fontFamily = "Roboto";
+                outputTag.style.fontSize = "20px";
+                let text = `{{gptOutput[hall]|tojson}}`;
+                let i = 1;
+                let speed = 25; 
+                const intervalId = setInterval (function() {
+                    outputTag.innerHTML += text[i];
+                    i++;
+                    if (i + 1 === text.length) {
+                        clearInterval(intervalId);
+                    }
+                }, speed);
+            });
+        });
     </script>
     <title>OSU Dorm Reviews</title>
 </head>
@@ -54,31 +52,24 @@
         </form>
     </header>
     <div class="content-2">
+        
         <div class="image-container">
-            <img src="../static/{{ hallIDs[hall][1] }}" alt="Hall Image">
-            <div class="hall-info">
-                <h1 class="text-overlay">{{ hall }} Hall Reviews</h1>
+            <img src="../static/img/dorms/{{ hallIDs[hall][1] }}" alt="Hall Image">
+            <div class="hall-text">
+                <h1>{{ hall }} Hall Reviews</h1>
             </div>
         </div>
-        <div class="backbar">
-            <div class="back-arrow">
-                <a href="/dorms">
-                    <img src="../static/back.png" alt="Back">
-                    <h2>Back to Dorms</h2>
-                </a>
-            </div>
-        </div> 
+       
         <div class="review-container">
             <div class="button-container">
-                <button id="gpt-button" onClick="displaySummary()">AI's Summary</button>
-                <div id="gpt-output">
-                    <h1>AI Review Summary</h1>
-                    <h2 id="output"></h2>
-                </div>
+                <a href="/dorms" class="back-arrow">
+                    <img src="../static/img/other/back.png" alt="Back">
+                </a>
+                <div id="gpt-output">AI Summary</div>
                 <div id="google-reviews-button">
-                    <a href={{hallIDs[hall][2]}}>
+                    <a style='display: flex; align-items: center;' href={{hallIDs[hall][2]}}>
                         <h1>View All Reviews</h1>
-                        <img src="../static/Google.png">
+                        <img src="../static/img/logos/Google.png">
                     </a>
                 </div> 
             </div>
@@ -86,33 +77,16 @@
                 {% if hallReview[2] == hall %}
                     <div class="review">
                         <div class="stars">
-                            {% if hallReview[0] == 1 %}
-                                <img src="../static/star.png" alt="1 Star">
-                            {% elif hallReview[0] == 2 %}
-                                <img src="../static/star.png" alt="2 Star">
-                                <img src="../static/star.png" alt="2 Star">
-                            {% elif hallReview[0] == 3 %}
-                                <img src="../static/star.png" alt="3 Star">
-                                <img src="../static/star.png" alt="3 Star">
-                                <img src="../static/star.png" alt="3 Star">
-                            {% elif hallReview[0] == 4 %}
-                                <img src="../static/star.png" alt="4 Star">
-                                <img src="../static/star.png" alt="4 Star">
-                                <img src="../static/star.png" alt="4 Star">
-                                <img src="../static/star.png" alt="4 Star">
-                            {% elif hallReview[0] == 5 %}
-                                <img src="../static/star.png" alt="5 Star">
-                                <img src="../static/star.png" alt="5 Star">
-                                <img src="../static/star.png" alt="5 Star">
-                                <img src="../static/star.png" alt="5 Star">
-                                <img src="../static/star.png" alt="5 Star">
-                            {% endif %}
+                            {% for star in range(hallReview[0]) %}
+                                <img src="../static/img/other/star.png" alt="1 Star">
+                            {% endfor %}
                         </div>
                         <h2>{{ hallReview[1] }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
+    </div>
     </div>
 </body>
 

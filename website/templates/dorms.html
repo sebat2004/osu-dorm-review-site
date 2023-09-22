@@ -14,7 +14,7 @@
         {% for result in searchResults %}
             <a href="/dorms/{{ result }}">
                 <div class="hall">
-                    <img src="static/{{ hallIDs[result][1] }}">
+                    <img src="../static/img/dorms/{{ hallIDs[result][1] }}">
                     <div class="hall-info">
                         <h1>{{ result }}</h1>
                         <h1> {{ hallIDs[result][3] }} / 5 </h1>
@@ -29,7 +29,7 @@
         {% for hall, hallInfo in hallIDs.items() %}
             <a href="/dorms/{{ hall }}">
                 <div class="hall">
-                    <img src="static/{{ hallInfo[1] }}">
+                    <img src="../static/img/dorms/{{ hallInfo[1] }}">
                     <div class="hall-info">
                         <h1>{{ hall }}</h1>
                         <h1> {{ hallInfo[3] }} / 5 </h1>
