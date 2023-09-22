@@ -5,15 +5,6 @@
     src: url(../static/fonts/HoustanderDemo.ttf)
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0.35;
-    }
-    100% {
-        opacity: 1;
-     }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -163,7 +154,6 @@ p {
 
 .hall, .hall h1 {
     padding: 20px 0px;
-    animation: fadeInAnimation ease 0.1s;
     font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
