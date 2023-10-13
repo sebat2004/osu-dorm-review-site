@@ -1,9 +1,11 @@
-# OSU-Dorm-Review-Site
+<h1 align="center">OSU-Dorm-Review-Site</h1>
 
-View Site Live: [Website](https://oregon-state-university-dorm-reviews.onrender.com)
+<h3 align="center">View Site Live: <a href="https://oregon-state-university-dorm-reviews.onrender.com">Website</a></h3>
 
-This app was created for the Spring 2023 OSU Hackathon. This is a solo project where I leverage AI tools such as GitHub Copilot and ChatGPT to create a dorm review site for Oregon State University. The project placed third overall.
+<div style="display: flex; justify-content: center;"><img src="./website/static/img/other/landing.JPG" style="width: 800px; height: 450px;  " /></div>
 
-## Technologies Used
+<h3 align="center">This app was created for the Spring 2023 OSU Hackathon. This is a solo project where I leveraged AI tools such as GitHub Copilot and ChatGPT to create a dorm review site for Oregon State University. The project placed third overall and recieved $50 dollars in earnings.</h4>
 
-Python, Flask, HTML, CSS, and JavaScript.
+<h2 align="center">Technologies Used</h2>
+
+<h3 align="center">Python, Flask, HTML, CSS, and JavaScript.</h3>
