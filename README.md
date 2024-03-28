@@ -1,6 +1,7 @@
 <h1 align="center">OSU-Dorm-Review-Site</h1>
 
-<h3 align="center">View Site Live: <a href="https://oregon-state-university-dorm-reviews.onrender.com">Website</a></h3>
+<h3 align="center">The site is no longer deployed :(</a></h3>
+<h3 align="center">Preview images coming soon</a></h3>
 
 <div style="display: flex; justify-content: center;"><img src="./website/static/img/other/landing.JPG" style="width: 800px; height: 450px;  " /></div>
 
